@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+# The SQLite database is rebuilt by fetch_ridership.py; don't commit it.
+data/*.sqlite
+data/*.sqlite-journal
