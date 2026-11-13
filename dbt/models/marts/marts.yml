@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: monthly_summary
+    description: >
+      Monthly CTA totals: total rides, bus and rail boardings, average
+      daily rides, and days in the month.
+    columns:
+      - name: month
+        description: First day of the month.
+        tests:
+          - unique
+          - not_null
+      - name: total_rides
+        description: Total boardings in the month.
+
+  - name: bus_vs_rail_recovery
+    description: >
+      Each month's bus, rail, and total rides as a percentage of the same
+      calendar month in 2019, the pre-COVID baseline. Over the last 12
+      months bus is back to ~85% of 2019 while rail is only ~65%.
+    columns:
+      - name: month
+        description: First day of the month.
+        tests:
+          - unique
+          - not_null
+      - name: bus_pct_of_2019
+        description: Bus boardings as a percentage of the same month in 2019.
+      - name: rail_pct_of_2019
+        description: Rail boardings as a percentage of the same month in 2019.
+      - name: total_pct_of_2019
+        description: Total boardings as a percentage of the same month in 2019.
+
+  - name: yoy_monthly
+    description: >
+      Each month vs the same month a year earlier: year-over-year change
+      in rides, bus, and rail, in absolute and percentage terms.
+    columns:
+      - name: month
+        description: First day of the month.
+        tests:
+          - unique
+          - not_null
+      - name: total_rides_yoy_pct
+        description: Total rides vs the same month last year, percent change.

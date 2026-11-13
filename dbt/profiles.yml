@@ -1,0 +1,19 @@
+# Local-only profile. No cloud account, no credentials, no cost.
+# Run dbt from this directory:  dbt build --profiles-dir .
+cta_ridership:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # Local DuckDB file for models and tests. Rebuilt by `dbt build`;
+      # never committed (see .gitignore).
+      path: dev.duckdb
+      extensions:
+        - sqlite
+      # Attach the dashboard's SQLite database read-only so dbt reads the
+      # live ridership table without copying or modifying it.
+      attach:
+        - path: ../data/ridership.sqlite
+          alias: cta
+          type: sqlite
+          read_only: true

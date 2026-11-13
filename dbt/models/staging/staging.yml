@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_ridership
+    description: >
+      Cleaned daily CTA boardings: the raw ridership table with
+      service_date cast to a date. One row per day, 2001–present.
+    columns:
+      - name: service_date
+        description: Date of the boardings.
+        tests:
+          - unique
+          - not_null
+      - name: day_type
+        description: W = weekday, A = Saturday, U = Sunday/holiday.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['W', 'A', 'U']
+      - name: bus
+        description: Bus boardings that day.
+      - name: rail_boardings
+        description: Rail boardings that day.
+      - name: total_rides
+        description: Bus + rail boardings that day.

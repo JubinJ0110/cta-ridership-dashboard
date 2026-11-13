@@ -6,3 +6,9 @@ venv/
 # The SQLite database is rebuilt by fetch_ridership.py; don't commit it.
 data/*.sqlite
 data/*.sqlite-journal
+# dbt run artifacts (local outputs; never commit)
+dbt/target/
+dbt/logs/
+dbt/dev.duckdb
+dbt/dbt_packages/
+dbt/.user.yml

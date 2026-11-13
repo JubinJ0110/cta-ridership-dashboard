@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_daily_totals
+    description: >
+      One row per day with bus/rail shares of total rides and year/month
+      keys, the shared base for the marts.
+    columns:
+      - name: service_date
+        description: Date of the boardings.
+        tests:
+          - unique
+          - not_null
+      - name: bus_share
+        description: Bus boardings as a share of total rides that day.
+      - name: rail_share
+        description: Rail boardings as a share of total rides that day.

@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: cta
+    description: >
+      Raw CTA ridership data, read live from the dashboard's SQLite file
+      (data/ridership.sqlite), attached read-only as database `cta`.
+      Maintained by fetch_ridership.py; dbt never writes to it.
+    database: cta
+    schema: main
+    tables:
+      - name: ridership
+        description: >
+          One row per day of CTA system boardings, 2001–present.
+          service_date is the primary key; day_type is W (weekday),
+          A (Saturday), or U (Sunday/holiday).
+        columns:
+          - name: service_date
+            description: Date of the boardings, YYYY-MM-DD.
+          - name: day_type
+            description: W = weekday, A = Saturday, U = Sunday/holiday.
+          - name: bus
+            description: Bus boardings that day.
+          - name: rail_boardings
+            description: Rail boardings that day.
+          - name: total_rides
+            description: Bus + rail boardings that day.
