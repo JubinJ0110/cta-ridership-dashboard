@@ -34,6 +34,10 @@ Lineage: `cta.ridership` → `stg_ridership` → `int_daily_totals` → marts.
   not closing the gap.
 - **marts / `yoy_monthly`** — each month vs the same month a year earlier,
   with the year-over-year change and percentage change.
+- **marts / `weekday_recovery`** — average daily rides by weekday
+  (Mon–Fri), latest 12 months vs the same weekday's 2019 average.
+  Monday is the weakest recovery (~69% of 2019), Thursday the strongest
+  (~75%) — the weekday lag is concentrated on Mon and Fri.
 
 ## Tests
 

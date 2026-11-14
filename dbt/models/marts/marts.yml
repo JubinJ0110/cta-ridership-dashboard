@@ -44,3 +44,21 @@ models:
           - not_null
       - name: total_rides_yoy_pct
         description: Total rides vs the same month last year, percent change.
+
+  - name: weekday_recovery
+    description: >
+      Average daily rides by weekday (Mon–Fri), latest 12 months vs the
+      same weekday's 2019 average. Monday is the weakest recovery at
+      ~69% of 2019 and Thursday the strongest at ~75% — the hybrid-work
+      pattern: the weekday lag is concentrated on Mon and Fri.
+    columns:
+      - name: weekday
+        description: Weekday, Mon–Fri.
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+      - name: pct_of_2019
+        description: Latest-12-months average daily rides as a percentage of the same weekday's 2019 average.

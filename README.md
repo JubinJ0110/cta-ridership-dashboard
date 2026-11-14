@@ -93,6 +93,10 @@ Chicago Data Portal API  →  fetch_ridership.py  →  SQLite (data/ridership.sq
 
 Python 3, standard library plus `requests` and `matplotlib` (see `requirements.txt`).
 
+## The same data as a dbt project
+
+The `dbt/` folder rebuilds the same analysis the analytics-engineering way: SQL models (staging → intermediate → marts), tests, and docs, running locally on DuckDB against the same SQLite file — no cloud account needed. It has 6 models and 17 tests, including a `weekday_recovery` mart showing Monday as the weakest recovery (~69% of 2019) and Thursday the strongest (~75%). See [dbt/README.md](dbt/README.md). `dbt build` passes 23/23.
+
 ## What's next
 
 - Break the recovery down by month-of-year to separate seasonal effects from the trend.
