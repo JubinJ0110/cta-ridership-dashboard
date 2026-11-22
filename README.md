@@ -24,8 +24,8 @@ All figures computed from the dataset in this repo (see [How to run it](#how-to-
 
 - The worst month was **April 2020: 8.1M rides**, about 19% of the best 2019 month (October 2019, 42.4M).
 - Monthly ridership did not pass 30M again until **October 2024** — four and a half years after the drop.
-- The latest 12 months in the data (Sep 2025–Aug 2026) total **343.9M rides, 75.5% of 2019**.
-- Growth is still happening but slow: Jan–Aug 2026 (230.0M) is up 2.6% on the same months in 2025.
+- The latest 12 months in the data (Oct 2025–Sep 2026) total **345.1M rides, 75.7% of 2019**.
+- Growth is still happening but slow: Jan–Sep 2026 (262.0M) is up 2.7% on the same months in 2025.
 
 **Weekdays lag, weekends lead**
 
@@ -62,13 +62,13 @@ Ridership was already falling before COVID. The all-time peak in this data is **
 ## The data
 
 - **Source:** Chicago Data Portal, [CTA – Ridership – Daily Boarding Totals](https://data.cityofchicago.org/resource/6iiy-9s97.json) (Socrata API, no key needed).
-- **Coverage:** daily systemwide boardings, 2001-01-01 to 2026-08-31 (9,374 days).
+- **Coverage:** daily systemwide boardings, 2001-01-01 to 2026-09-30 (9,404 days).
 - **Columns:** `service_date`, `day_type` (W = Weekday, A = Saturday, U = Sunday/Holiday), `bus`, `rail_boardings`, `total_rides`.
 - **What it counts:** boardings, not linked trips — a rider who transfers bus-to-rail counts twice. That is how CTA reports it, so year-to-year comparisons are consistent.
 
 **Caveats**
 
-- The data lags: as of early November 2026, the latest date published is 2026-08-31, so 2026 figures are January–August only.
+- The data lags: as of late November 2026, the latest date published is 2026-09-30, so 2026 figures are January–September only.
 - `day_type = U` mixes Sundays and holidays, so Sunday averages include holiday dips.
 - 2020 is a leap year (366 days), which slightly flatters its yearly total.
 
