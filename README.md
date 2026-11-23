@@ -59,6 +59,18 @@ Ridership was already falling before COVID. The all-time peak in this data is **
 
 ![Bus vs rail share](charts/bus_vs_rail_share.png)
 
+**Recovery by month, weekday, and holiday**
+
+- Summer months recover best: August 2025 hit 78.4% of 2019, and September 2026 is the strongest month yet at 79.9%. February is the weakest (68.8% in 2025).
+- Monday is the weakest weekday every year (68.8% of 2019 in 2025 vs 73.0% for Thursday), but the Monday–Thursday gap narrowed from 5.5 points in 2023 to 4.2 in 2025.
+- Fixed-date holidays are the quietest days: Christmas Day averages 214,311 rides — about a third of a normal Sunday — followed by New Year's Day (368,054), July 4 (512,006), and New Year's Eve (569,401).
+
+![Monthly recovery](charts/monthly_recovery.png)
+
+![Weekday recovery trend](charts/weekday_recovery_trend.png)
+
+![Holiday effect](charts/holiday_effect.png)
+
 ## The data
 
 - **Source:** Chicago Data Portal, [CTA – Ridership – Daily Boarding Totals](https://data.cityofchicago.org/resource/6iiy-9s97.json) (Socrata API, no key needed).
@@ -99,6 +111,6 @@ The `dbt/` folder rebuilds the same analysis the analytics-engineering way: SQL 
 
 ## What's next
 
-- Break the recovery down by month-of-year to separate seasonal effects from the trend.
 - Pull CTA service data (scheduled vs actual service) to test whether service cuts explain part of the rail lag.
-- Add a simple forecast for when ridership would reach 2019 levels at the current growth rate.
+- Break the recovery down by day type and year to see whether weekends recovered first.
+- Track the 2026 pace against 2019 and 2025 as the year closes.
