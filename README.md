@@ -107,7 +107,7 @@ Python 3, standard library plus `requests` and `matplotlib` (see `requirements.t
 
 ## The same data as a dbt project
 
-The `dbt/` folder rebuilds the same analysis the analytics-engineering way: SQL models (staging → intermediate → marts), tests, and docs, running locally on DuckDB against the same SQLite file — no cloud account needed. It has 6 models and 17 tests, including a `weekday_recovery` mart showing Monday as the weakest recovery (~69% of 2019) and Thursday the strongest (~75%). See [dbt/README.md](dbt/README.md). `dbt build` passes 23/23.
+The `dbt/` folder rebuilds the same analysis the analytics-engineering way: SQL models (staging → intermediate → marts), tests, and docs, running locally on DuckDB against the same SQLite file — no cloud account needed. It has 8 models and 23 tests, including a `weekday_recovery` mart showing Monday as the weakest recovery (~69% of 2019) and Thursday the strongest (~75%). See [dbt/README.md](dbt/README.md). `dbt build` passes 31/31.
 
 ## What's next
 

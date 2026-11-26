@@ -62,3 +62,36 @@ models:
                 values: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
       - name: pct_of_2019
         description: Latest-12-months average daily rides as a percentage of the same weekday's 2019 average.
+
+  - name: monthly_recovery
+    description: >
+      Each month's total rides as a percentage of the same calendar month
+      in 2019 — the SQL mirror of charts/monthly_recovery.png. September
+      2026 is the strongest month yet at ~80% of September 2019.
+    columns:
+      - name: month
+        description: First day of the month.
+        tests:
+          - unique
+          - not_null
+      - name: total_pct_of_2019
+        description: Total rides as a percentage of the same month in 2019.
+        tests:
+          - not_null
+
+  - name: holiday_effect
+    description: >
+      Fixed-date holiday averages (2019 onward) vs the 2019 Sunday and
+      weekday averages — the SQL mirror of charts/holiday_effect.png.
+      Christmas Day averages ~214k rides, about a third of a normal
+      Sunday. Thanksgiving is excluded: its date moves year to year.
+    columns:
+      - name: holiday
+        description: Fixed-date holiday.
+        tests:
+          - unique
+          - not_null
+      - name: avg_daily_rides
+        description: Average daily rides on that date, 2019 onward.
+        tests:
+          - not_null

@@ -9,7 +9,7 @@ there is no cloud account and no cost.
 ## Data
 
 Source: `data/ridership.sqlite`, table `ridership` — one row per day,
-2001–present (9,374 rows; currently through 2026-08-31). Columns:
+2001–present (9,404 rows; currently through 2026-09-30). Columns:
 `service_date` (TEXT, primary key), `day_type` (`W` weekday, `A` Saturday,
 `U` Sunday/holiday), `bus`, `rail_boardings`, `total_rides`.
 
@@ -38,6 +38,13 @@ Lineage: `cta.ridership` → `stg_ridership` → `int_daily_totals` → marts.
   (Mon–Fri), latest 12 months vs the same weekday's 2019 average.
   Monday is the weakest recovery (~69% of 2019), Thursday the strongest
   (~75%) — the weekday lag is concentrated on Mon and Fri.
+- **marts / `monthly_recovery`** — each month's total rides as a
+  percentage of the same calendar month in 2019. September 2026 is the
+  strongest month yet at 79.9% of September 2019.
+- **marts / `holiday_effect`** — fixed-date holiday averages (2019
+  onward) vs the 2019 Sunday and weekday averages. Christmas Day
+  averages ~214k rides, about a third of a normal Sunday; New Year's
+  Eve is the busiest holiday at ~569k.
 
 ## Tests
 
